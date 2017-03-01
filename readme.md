@@ -76,7 +76,7 @@ import Tabs from 'purecss-components-tabs';
 // Pass in a selector to the base node for the tabs you want to work with
 const myTabs = Tabs('.accordion');
 
-// Set the active tab - sets the active tab using a zero-based index.
+// Set the active tab using a zero-based index.
 myTabs.setActiveTab(1);
 
 ```

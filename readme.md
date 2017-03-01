@@ -1,15 +1,15 @@
-Pure CSS Components Alert
+Pure CSS Components Tabs
 ==================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/joe-crick/pure-css-components-alert.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/joe-crick/pure-css-components-tabs.svg)](https://greenkeeper.io/)
 
-[![Build Status](https://travis-ci.org/joe-crick/pure-css-components-alert.svg?branch=master)](https://travis-ci.org/joe-crick/pure-css-components-alert)
+[![Build Status](https://travis-ci.org/joe-crick/pure-css-components-tabs.svg?branch=master)](https://travis-ci.org/joe-crick/pure-css-components-tabs)
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame.svg)](license.txt) 
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Current Version](https://img.shields.io/badge/version-0.0.1-green.svg)
 
 
-A small JS utility for working with Pure.CSS Components Alert. 
+A small JS utility for working with Pure.CSS Components Tabs. 
 
 NOTE: This is an independent project, and is not directly associated with Pure CSS.
 
@@ -24,49 +24,59 @@ JS? Use just what you need.
 ### Install from NPM
 
 ```js
-yarn add purecss-components-alert
+yarn add purecss-components-tabs
 ```
 or
 ```js
-npm i purecss-components-alert -S
+npm i purecss-components-tabs -S
 ```
 
 ## Example
 
-An example HTML Alert:
+An example HTML Tabs:
 
 ```html
-<!-- #my-alert is considered the base node for this alert -->
-<input type="checkbox" id="my-alert" class="alert-toggle pcssc-invisible"/>
-<div class="alert alert-success alert-dismissible" role="alert">
-    <span><strong>Uh oh...</strong> Something happened...</span>
-    <label for="close-alert" class="close-alert" aria-label="Close">
-        <span aria-invisible="true">&times;</span>
-    </label>
-</div>
+<!-- .accordion is considered the base node for this tab set -->
+<ul class="accordion accordion-tab">
+    <li class="accordion-section">
+        <input type="radio" class="accordion-section-selector pcssc-invisible" id="zero" name="tab-head" role="tab"
+               checked/>
+        <label for="zero" class="accordion-section-header">Option 0</label>
+        <div class="accordion-section-content">
+            <h2>Heading 1</h2>
+            Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero,
+            viverra
+            vel vestibulum in,
+        </div>
+    </li>
+    <li class="accordion-section">
+        <input type="radio" class="accordion-section-selector pcssc-invisible" id="one" name="tab-head" role="tab"/>
+        <label for="one" class="accordion-section-header">Option 1</label>
+        <div class="accordion-section-content">
+            <h2>Heading 1</h2>
+            Content goes here
+        </div>
+    </li>
+    <li class="accordion-section">
+        <input type="radio" class="accordion-section-selector pcssc-invisible" id="two" name="tab-head" role="tab"/>
+        <label for="two" class="accordion-section-header">Option 2</label>
+        <div class="accordion-section-content">
+            <h2>Heading 2</h2>
+            Lorem Ipsum
+        </div>
+    </li>
+</ul>
 ```
-This JS would work with the Alert defined above: 
+This JS would work with the Tabs defined above: 
 
 ```js
 
-import Alert from 'purecss-components-alert';
+import Tabs from 'purecss-components-tabs';
 
-// Pass in a selector to the base node for the alert you want to work with
-const myAlert = Alert('#my-alert');
+// Pass in a selector to the base node for the tabs you want to work with
+const myTabs = Tabs('.accordion');
 
-// Show the alert
-myAlert.open();
-
-// Hide the alert
-myAlert.close();
-
-// Toggle the alert
-myAlert.toggle();
-
-// Check if the alert is open
-myAlert.isOpen();
-
-// Check if the alert is closed
-myAlert.isClosed();
+// Set the active tab
+myTabs.setActiveTab(1);
 
 ```

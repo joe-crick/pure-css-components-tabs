@@ -20,6 +20,6 @@
     "uglify-js": "^2.7.5"
   },
   "dependencies": {
-    "eslint": "^3.17.1"
+    "eslint": "^3.18.0"
   }
 }
